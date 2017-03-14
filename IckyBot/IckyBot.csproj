@@ -215,7 +215,9 @@
     <Compile Include="Migrations\20170308194537_UserDataUpdate1.designer.cs">
       <DependentUpon>20170308194537_UserDataUpdate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\DiscordMessageFactory.cs" />
     <Compile Include="Services\DiscordUserFactory.cs" />
+    <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
