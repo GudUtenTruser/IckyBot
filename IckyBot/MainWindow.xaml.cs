@@ -17,6 +17,12 @@ namespace IckyBot
         private UserService _users = new UserService();
 
         private MessageService _messages = new MessageService();
+
+
+        /// <summary>
+        /// YOU NEED TO ASSIGN THIS FIELD YOUR BOT'S TOKEN VALUE
+        /// </summary>
+        private string _token;
         
         public MainWindow()
         {
@@ -41,7 +47,13 @@ namespace IckyBot
 
         private async void OnLoaded(object sender, RoutedEventArgs e)
         {
-            await _client.Connect(@"Mjg4NzgyMjE4NTU2MzQyMjcz.C6C0-A.WOB24cRYKnIAkFbGeAYGyaBMi98", TokenType.Bot);
+            if(_token == null)
+            {
+                MessageBox.Show("You didn't read the directions and enter your bot token");
+                return;
+            }
+
+            await _client.Connect(_token, TokenType.Bot);
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
